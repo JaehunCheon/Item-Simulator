@@ -20,10 +20,12 @@ const characterSchema = new mongoose.Schema({
     type: Number,
     default: 100,
   },
-  doneAt: {
-    type: Date, // doneAt 필드는 Date 타입을 가집니다.
-    required: false, // doneAt 필드는 필수 요소가 아닙니다.
-  },
+  equippedItems:[
+    {
+      type : mongoose.Schema.Types.ObjectId,
+      ref : 'Item',
+    }
+  ]
 });
 
 // 프론트엔드 서빙을 위한 코드입니다. 모르셔도 괜찮아요!
